@@ -4,7 +4,8 @@ We propose a novel sparse SVM, named as ReliefF based on SVM, which combines rec
 ## $\alpha$ and optimal feature selection
 First, we calculate average accuracy of any feature subset at each $\alpha$. For example, we take as $\alpha=\{0.15,0.25,0.35,0.45,0.55,0.65,0.75,0.85,0.95\}$.
 
-##Paramet
+## Paramet
+
 -alpha: weight parameter $\alpha$, $0\le \alpha\le 1$ controls the trade-off between ReliefF ranking and SVMs-RFE ranking.
 -folds: folds of cross-validation 
 -optim_featur_num: optimal feature number of feature subset
