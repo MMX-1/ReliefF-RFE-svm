@@ -4,7 +4,7 @@ We propose a novel sparse SVM, named as ReliefF based on SVM, which combines rec
 ## $\alpha$ and optimal feature selection
 First, obtaining optimal feature number and $\alpha$ by using average accuracy. For example, we take as $\alpha=\{0.15,0.25,0.35,0.45,0.55,0.65,0.75,0.85,0.95\}$.
 
-## Input Parameter
+### Input Parameter
 
 -alpha: weight parameter $\alpha$, $0\le \alpha\le 1$ controls the trade-off between ReliefF ranking and SVMs-RFE ranking.
 
@@ -50,9 +50,32 @@ Next, identify optimal feature number and $\alpha$ by finding the highest averag
 ```code
 max(aver_mean_lis1[:13]),np.max(aver_mean_lis2[:13]),np.max(aver_mean_lis3[:13]),np.max(aver_mean_lis4[:13]),np.max(aver_mean_lis5[:13]),np.max(aver_mean_lis6[:13]),np.max(aver_mean_lis7[:13]),np.max(aver_mean_lis8[:13]),np.max(aver_mean_lis9[:13])
 ```
-Then we can observe that optimal $\alpha$ corresponding to the higheset average accuracy, for example $\alpha$.
+Then we can observe that optimal $\alpha$ corresponding to the higheset average accuracy, for example $\alpha=0.35$.
 
 ```code
 np.argmax(aver_mean_lis3[:13])
 ```
 obtain optimal feature number, for example, optimal feature number is 10.
+
+
+## obtain optimal technical indicators and performance of SVC
+```code
+# k=4# k=5, 0.8
+rfe_relief_SVM_model=rfe_relief_SVM(x_train,y_train,0.1)
+rfe_relief_SVM_sele_featu_subset=rfe_relief_SVM_model.sele_feature(0.35,11)
+#obtain optimal technical indicators and feautre number
+np.array(techini_indicator)[rfe_relief_SVM_sele_featu_subset],len(np.array(techini_indicator)[rfe_relief_SVM_sele_featu_subset])
+
+#calculate accuracy,recall,specificity,precision,F-test
+estimator_SVM_rfe_reliefF=SVC(kernel='linear',C=0.1)
+estimator_SVM_rfe_reliefF.fit(x_train[:,rfe_relief_SVM_sele_featu_subset],y_train)
+rfe_reliefF_SVM_result=estimator_SVM_rfe_reliefF.predict(x_test[:,rfe_relief_SVM_sele_featu_subset])
+performan_rfe_reliefF_SVM=meansure_performance(rfe_reliefF_SVM_result)
+print(performan_rfe_reliefF_SVM)
+
+```
+
+
+
+
+
