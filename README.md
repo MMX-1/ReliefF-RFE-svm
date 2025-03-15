@@ -12,7 +12,7 @@ First, obtaining optimal feature number and $\alpha$ by using average accuracy. 
 
 -optim_featur_num: optimal feature number of feature subset
 
-```python
+```code
 rfe_relief_model=rfe_relief_SVM(x_train,y_train,0.1)
 aver_mean_lis1,F_measure_lis1=rfe_relief_model.featu_score(0.15,5)
 print(aver_mean_lis1,F_measure_lis1)
