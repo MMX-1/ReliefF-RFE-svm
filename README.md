@@ -42,3 +42,6 @@ print(aver_mean_lis8,F_measure_lis8)
 aver_mean_lis9,F_measure_lis9=rfe_relief_model.featu_score(0.95,5)
 print(aver_mean_lis9,F_measure_lis9)
 
+Next, identify optimal feature number and $\alpha$ by finding the highest average highest of the first $k_{max}$ average accuracy from nine average accuracy list, for example $k_{max}=13$
+'''python
+max(aver_mean_lis1[:13]),np.max(aver_mean_lis2[:13]),np.max(aver_mean_lis3[:13]),np.max(aver_mean_lis4[:13]),np.max(aver_mean_lis5[:13]),np.max(aver_mean_lis6[:13]),np.max(aver_mean_lis7[:13]),np.max(aver_mean_lis8[:13]),np.max(aver_mean_lis9[:13])
