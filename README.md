@@ -7,7 +7,9 @@ First, we calculate average accuracy of any feature subset at each $\alpha$. For
 ## Paramet
 
 -alpha: weight parameter $\alpha$, $0\le \alpha\le 1$ controls the trade-off between ReliefF ranking and SVMs-RFE ranking.
+
 -folds: folds of cross-validation 
+
 -optim_featur_num: optimal feature number of feature subset
 
 ```python
