@@ -146,3 +146,5 @@ rfe_reliefF_SVM_result=estimator_SVM_rfe_reliefF.predict(x_test[:,rfe_relief_SVM
 performan_rfe_reliefF_SVM=meansure_performance(rfe_reliefF_SVM_result)
 print(performan_rfe_reliefF_SVM)
 ```
+# Reference
+Miao, Maoxuan, Jinran Wu, Fengjing Cai, Liya Fu, Shurong Zheng, and You‐Gan Wang. "Feature Selection for Stock Movement Direction Prediction using Sparse Support Vector Machine."
