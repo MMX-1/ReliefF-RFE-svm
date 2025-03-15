@@ -42,7 +42,7 @@ print(aver_mean_lis8,F_measure_lis8)
 aver_mean_lis9,F_measure_lis9=rfe_relief_model.featu_score(0.95,5)
 print(aver_mean_lis9,F_measure_lis9)
 '''
-##
+---
 
 
 
